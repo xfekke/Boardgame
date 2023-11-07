@@ -21,7 +21,7 @@ body {
   align-content: center;
   justify-items: center;
   align-items: center;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, auto)
 }
 
 .cell {
@@ -31,6 +31,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  cursor: pointer;
 }
 
 .cell:first-child,
@@ -59,14 +61,43 @@ body {
   border-bottom: none;
 }
 
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+
 .cell.x::before,
 .cell.x::after {
   content: '';
+  position: absolute;
   width: calc(var(--mark-size) * .15);
   height: var(--mark-size);
-  background-color: black;
+  background-color: black
 }
 
 .cell.x::before {
   transform: rotate(45deg);
+}
+
+.cell.x::after {
+  transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.cell.circle::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+  background-color: black
+}
+
+.cell.circle::after {
+  width: calc(var(--mark-size) * .7);
+  height: calc(var(--mark-size) * .7);
+  background-color: white
 }
