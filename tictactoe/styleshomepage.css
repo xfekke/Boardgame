@@ -8,28 +8,48 @@ body {
 
 nav {
     color: rgb(63, 19, 41);
+    font-size: 5vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin-top: 20vh;
+    margin-top: 60vh;
+    
 }
 
-nav:visited {
-    color: hotpink;
-    background-color: hotpink;
-}
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: white;
+    background-color: transparent;
+    
+  }
+  
+  a:active {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+  }
 
-nav:active {
-    color: aqua;
-}
+  p {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0;
+  }
 
-nav:hover {
-    color: green;
-}
-
-p:hover {
-    color: green;
-}
 
 
