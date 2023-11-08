@@ -1,0 +1,34 @@
+body {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdz1f5aluZiMSMf7RUTUj51BvcB3NbALBHaw&usqp=CAU);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+nav {
+    color: hotpink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+nav:visited {
+    color: hotpink;
+    background-color: hotpink;
+}
+
+nav:active {
+    color: aqua;
+}
+
+nav:hover {
+    color: green;
+}
+
+p:hover {
+    color: green;
+}
+
+
