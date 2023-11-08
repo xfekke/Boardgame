@@ -7,11 +7,12 @@ body {
 }
 
 nav {
-    color: hotpink;
+    color: rgb(63, 19, 41);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 20vh;
 }
 
 nav:visited {
