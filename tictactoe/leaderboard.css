@@ -12,26 +12,6 @@ body {
   margin: 0;
 }
 
-#createPlayer {
-  width: 100vh;
-  height: auto;
-  margin-top: 10vh;
-}
-
-label,
-input,
-button,
-p {
-  margin: 10px;
-  font-size: 25px;
-}
-
-h2 {
-  font-family: 'CaviarDreams', sans-serif;
-  color: rgb(27, 27, 27);
-  margin-top: 20px;
-}
-
 h3 {
   font-family: 'CaviarDreams', sans-serif;
   position: absolute;
@@ -50,6 +30,8 @@ h3 a:visited {
   color: rgb(27, 27, 27);
   background-color: transparent;
   text-decoration: none;
+  font-size: 25px;
+  margin-bottom: 2vh;
 }
 
 h3 a:hover {
