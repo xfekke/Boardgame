@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'CaviarDreams';
+  src: local('CaviarDreams'), url('CaviarDreams_Bold.ttf'), format('ttf');
+}
+
+body {
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#createPlayer {
+  width: 100vh;
+  height: auto;
+  margin-top: 10vh;
+}
+
+label,
+input,
+button,
+p {
+  margin: 10px;
+  font-size: 25px;
+}
+
+h2 {
+  font-family: 'CaviarDreams', sans-serif;
+  color: rgb(27, 27, 27);
+  margin-top: 20px;
+}
+
+h3 {
+  font-family: 'CaviarDreams', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+h3 a:link,
+h3 a:visited {
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+h3 a:hover {
+  color: rgb(214, 64, 69);
+  background-color: transparent;
+}
+
+h3 a:active {
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: underline;
+}

@@ -5,19 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="createPlayer.css">
-  <script src="script.js" defer></script> <!-- Länka till din JS-fil här -->
+  <script src="createPlayer.js" defer></script>
   <title>CreatePlayer</title>
 </head>
 
 <body>
-  <h2>Create Player</h2>
+  <img src="createPlayer.png" alt="createPlayer" id="createPlayer">
+  <label>Name:<label>
+      <input id="userName" type="text">
 
-  <form>
-    <label for="name">Name:</label>
-    <input type="name" name="email" id="name" />
-
-    <button type="submit">Submit</button>
-  </form>
+      <button id="jsonbtn">Register</button>
+      <p id="jsontext"></p>
+      <div>
+        <h3>
+          <a href="./main.html">Startpage</a>
+        </h3>
+      </div>
 </body>
 
 </html>

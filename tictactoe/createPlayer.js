@@ -1,12 +1,38 @@
-function handleSubmit(event) {
-  event.preventDefault();
+const fs = require('fs');
 
-  const data = new FormData(event.target);
+var userName = document.getElementById("userName");
+var jsonBtn = document.getElementById("jsonbtn");
+var jsonText = document.getElementById("jsontext");
 
-  const value = Object.fromEntries(data.entries());
+jsonBtn.addEventListener("click", function () {
+  // username objekt
+  var data = {
+    "userName": userName.value,
+  };
 
-  console.log({ value });
-}
+  // läs json
+  fs.readFile('users.json', 'utf8', (err, jsonString) => {
+    if (err) {
+      console.log("Error reading file:", err);
+      return;
+    }
 
-const form = document.querySelector('form');
-form.addEventListener('submit', handleSubmit);
+    // konvertera, gör tom array om json är tom
+    const existingData = jsonString ? JSON.parse(jsonString) : [];
+
+    // lägger till namn i array
+    existingData.push(data);
+
+    // sparar namn
+    fs.writeFile('users.json', JSON.stringify(existingData), 'utf8', (err) => {
+      if (err) {
+        console.log("Error writing file:", err);
+        return;
+      }
+
+      // Uppdatera användargränssnittet med JSON-data
+      jsonText.innerHTML = JSON.stringify(data);
+      console.log("User registered and data saved to users.json");
+    });
+  });
+});
