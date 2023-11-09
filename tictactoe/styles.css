@@ -1,4 +1,11 @@
-*, *::after, *::before {
+@font-face {
+  font-family: 'CaviarDreams';
+  src: local('CaviarDreams'), url('CaviarDreams_Bold.ttf'), format('ttf');
+}
+
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -143,4 +150,40 @@ body {
 
 .winning-message.show {
   display: flex;
+}
+
+h2 {
+  font-family: 'CaviarDreams', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+h2 a:link {
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+h2 a:visited {
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+h2 a:hover {
+  color: rgb(214, 64, 69);
+  background-color: transparent;
+
+}
+
+h2 a:active {
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: underline;
 }
