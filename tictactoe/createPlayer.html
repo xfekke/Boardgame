@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="createPlayer.css">
-    <title>CreatePlayer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="createPlayer.css">
+  <script src="script.js" defer></script> <!-- Länka till din JS-fil här -->
+  <title>CreatePlayer</title>
 </head>
+
 <body>
-    <h2>Create Player</h2>
+  <h2>Create Player</h2>
 
-    <label for="textInput1">Name: </label>
-    <input type="text" id="textInput1" />
+  <label for="textInput1">Name: </label>
+  <input type="text" id="textInput1" />
 
-    <button type="button" onclick="getInputValue()">
-      Register
-    </button>
+  <button type="button" onclick="getInputValue()">
+    Register
+  </button>
 
-    <h3>Output:</h3>
-    <p id="output"></p>
-    <script>
-      function getInputValue() {
-        let inputValue = document.getElementById("textInput1").value;
-        document.getElementById("output").innerHTML = inputValue;
-      }
-    </script>
+  <h3>Output:</h3>
+  <p id="output"></p>
 </body>
+
 </html>
-    
