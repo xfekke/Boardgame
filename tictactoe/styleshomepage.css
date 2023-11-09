@@ -1,55 +1,61 @@
+@font-face {
+  font-family: 'CaviarDreams';
+  src: local('CaviarDreams'), url('CaviarDreams_Bold.ttf'), format('ttf');
+}
+
+
 body {
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdz1f5aluZiMSMf7RUTUj51BvcB3NbALBHaw&usqp=CAU);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
+  background-image: url(Startpage2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+
 }
 
 nav {
-    color: rgb(63, 19, 41);
-    font-size: 5vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 60vh;
-    
+  font-family: 'CaviarDreams', sans-serif;
+  font-size: 5vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 65vh;
+
 }
 
 a:link {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: red;
-    background-color: transparent;
-    
-  }
-  
-  a:active {
-    color: white;
-    background-color: transparent;
-    text-decoration: underline;
-  }
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: none;
+}
 
-  p {
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    position: absolute;
-    bottom: 0;
-    left: 0; 
-    right: 0;
-  }
+a:visited {
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: none;
+}
 
+a:hover {
+  color: rgb(214, 64, 69);
+  background-color: transparent;
 
+}
 
+a:active {
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+p {
+  font-family: 'CaviarDreams', sans-serif;
+  color: rgb(27, 27, 27);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
