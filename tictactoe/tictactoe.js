@@ -22,15 +22,15 @@ startGame()
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
-  circleTurn = false
+  circleTurn = false;
   cellElements.forEach(cell => {
-    cell.classList.remove(X_CLASS)
-    cell.classList.remove(CIRCLE_CLASS)
-    cell.removeEventListener('click', handleClick)
-    cell.addEventListener('click', handleClick, { once: true })
-  })
-  setBoardHoverClass()
-  winningMessageElement.classList.remove('show')
+    cell.classList.remove(X_CLASS);
+    cell.classList.remove(CIRCLE_CLASS);
+    cell.removeEventListener('click', handleClick);
+    cell.addEventListener('click', handleClick, { once: true });
+  });
+  setBoardHoverClass();
+  winningMessageElement.classList.remove('show');
 }
 
 function handleClick(e) {
@@ -62,9 +62,28 @@ function isDraw() {
   })
 }
 
+const MAX_X_MARKS = 3;
+const MAX_CIRCLE_MARKS = 3;
+
+const xMarks = [];
+const circleMarks = [];
+
 function placeMark(cell, currentClass) {
-  cell.classList.add(currentClass)
+  const marks = currentClass === X_CLASS ? xMarks : circleMarks;
+  const maxMarks = currentClass === X_CLASS ? MAX_X_MARKS : MAX_CIRCLE_MARKS;
+
+  if (marks.length >= maxMarks) {
+    const oldestMark = marks.shift();
+    cell.classList.remove(currentClass);
+    oldestMark.classList.remove(currentClass);
+    marks.push(cell);
+  } else {
+    marks.push(cell);
+  }
+
+  cell.classList.add(currentClass);
 }
+
 
 function swapTurns() {
   circleTurn = !circleTurn
