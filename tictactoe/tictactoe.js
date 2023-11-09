@@ -38,7 +38,7 @@ function startGame() {
     cell.classList.remove(X_CLASS);
     cell.classList.remove(CIRCLE_CLASS);
     cell.removeEventListener('click', handleClick);
-    cell.addEventListener('click', handleClick, { once: true });
+    cell.addEventListener('click', handleClick);
   });
 
   // Uppdatera stilen på spelbrädet
