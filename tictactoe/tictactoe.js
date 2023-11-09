@@ -44,7 +44,6 @@ function startGame() {
   // Uppdatera stilen på spelbrädet
   setBoardHoverClass();
 
-  // Dölj eventuellt vinnarmeddelande
   winningMessageElement.classList.remove('show');
 }
 
@@ -57,7 +56,6 @@ function handleClick(e) {
     return;
   }
 
-  // Hämta den aktuella spelarens klass (X eller O)
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
 
   // Placera markeringen i cellen och hantera spelets logik

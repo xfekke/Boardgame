@@ -12,6 +12,18 @@ body {
   margin: 0;
 }
 
+th {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.bgPink {
+  background-color: pink;
+}
+
 h3 {
   font-family: 'CaviarDreams', sans-serif;
   position: absolute;

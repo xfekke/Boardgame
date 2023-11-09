@@ -50,6 +50,7 @@ h3 a:visited {
   color: rgb(27, 27, 27);
   background-color: transparent;
   text-decoration: none;
+  margin-bottom: 2vh;
 }
 
 h3 a:hover {
