@@ -1,4 +1,12 @@
-const fs = require('fs');
+import fs from "fs";
+
+const data = JSON.parse(fs.readFileSync("users.json", "utf-8"))
+
+
+
+
+
+
 
 var userName = document.getElementById("userName");
 var jsonBtn = document.getElementById("jsonbtn");

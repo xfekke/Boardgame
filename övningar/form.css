@@ -1,0 +1,6 @@
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 1vh;
+}
