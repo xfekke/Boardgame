@@ -107,12 +107,9 @@ function placeMark(cell, currentClass) {
   // Om antalet markeringar är lika med eller större än det maximala antalet tillåtna, ta bort den äldsta markeringen
   if (marks.length >= maxMarks) {
     const oldestMark = marks.shift();
-    cell.classList.remove(currentClass);
     oldestMark.classList.remove(currentClass);
-    marks.push(cell);
-  } else {
-    marks.push(cell);
-  }
+  } 
+  marks.push(cell);
 
   // Lägg till klassen för den aktuella spelaren i cellen
   cell.classList.add(currentClass);
