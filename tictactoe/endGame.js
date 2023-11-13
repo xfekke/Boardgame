@@ -1,0 +1,1 @@
+const winner = localStorage.getItem('winner')

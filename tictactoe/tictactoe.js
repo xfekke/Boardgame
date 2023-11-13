@@ -1,5 +1,4 @@
 let storedData = localStorage.getItem('users');
-// Definiera konstanter för olika klasser och kombinationer
 const X_CLASS = 'x';
 const CIRCLE_CLASS = 'circle';
 const WINNING_COMBINATIONS = [
@@ -17,22 +16,33 @@ const WINNING_COMBINATIONS = [
 const cellElements = document.querySelectorAll('[data-cell]');
 const board = document.getElementById('board');
 const winningMessageElement = document.getElementById('winningMessage');
-const restartButton = document.getElementById('restartButton');
+const endGameBtn = document.getElementById('endGameBtn');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
 
 // Variabel för att hålla reda på om det är X:s eller O:s tur
 let circleTurn;
 
+
 // Starta spelet när sidan laddas
 startGame();
 
-// Lägg till en lyssnare för restart-knappen
-restartButton.addEventListener('click', startGame);
+// Går till nästa sida efter någon vunnit
+endGameBtn.addEventListener('click', goToEndGamePage);
+
+function goToEndGamePage() {
+  const winner = localStorage.getItem('winner');
+  localStorage.setItem('winner', winner);
+
+  setTimeout(() => {
+    window.location.href = 'endGame.html';
+  }, 10000);
+}
 
 // Funktion för att starta spelet
 function startGame() {
   // Det är X:s tur
   circleTurn = false;
+
 
   // Återställ alla celler och lägg till klick-händelsehanterare
   cellElements.forEach(cell => {
@@ -59,17 +69,14 @@ function handleClick(e) {
 
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
 
-  // Placera markeringen i cellen och hantera spelets logik
   placeMark(cell, currentClass);
 
   // Kolla om någon har vunnit
   if (checkWin(currentClass)) {
     endGame(false);
   } else if (isDraw()) {
-    // Kolla om det är oavgjort
     endGame(true);
   } else {
-    // Byt spelare och uppdatera spelbrädet
     swapTurns();
     setBoardHoverClass();
   }
@@ -140,3 +147,5 @@ function checkWin(currentClass) {
     });
   });
 }
+
+

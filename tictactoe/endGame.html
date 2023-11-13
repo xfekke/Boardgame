@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winner Page</title>
+</head>
+
+<body>
+  <h1>Winner Page</h1>
+  <div id="winner"></div>
+
+  <script>
+
+    const winner = localStorage.getItem('winner');
+
+
+    const winnerElement = document.getElementById('winner');
+    if (winner) {
+      winnerElement.innerText = `Winner: Player ${winner}`;
+    } else {
+      winnerElement.innerText = 'It\'s a draw!';
+    }
+  </script>
+</body>
+
+</html>
