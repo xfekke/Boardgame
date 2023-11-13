@@ -24,13 +24,10 @@ button,
 p {
   margin: 10px;
   font-size: 25px;
+  flex: 1;
 }
 
-h2 {
-  font-family: 'CaviarDreams', sans-serif;
-  color: rgb(27, 27, 27);
-  margin-top: 20px;
-}
+
 
 h3 {
   font-family: 'CaviarDreams', sans-serif;
@@ -63,3 +60,17 @@ h3 a:active {
   background-color: transparent;
   text-decoration: underline;
 }
+
+div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+h2 {
+  font-family: 'CaviarDreams', sans-serif;
+  color: rgb(27, 27, 27);
+  margin-right: 10px;
+}
+
+
