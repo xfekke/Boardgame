@@ -1,33 +1,35 @@
-@font-face {
-  font-family: 'CaviarDreams';
-  src: local('CaviarDreams'), url('CaviarDreams_Bold.ttf'), format('ttf');
-}
-
-body {
-  background-color: rgb(240, 240, 240);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-}
-
 #createPlayer {
   width: 100vh;
   height: auto;
   margin-top: 10vh;
 }
 
-label,
-input,
+.player-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20vh;
+  margin-bottom: 10px; 
+}
+
+#userNameX {
+  width: 100px;
+}
+
+h2 {
+  font-family: 'CaviarDreams', sans-serif;
+  color: rgb(27, 27, 27);
+  margin-right: 10px;
+}
+
+input {
+  flex: 1;
+}
+
 button,
 p {
   margin: 10px;
   font-size: 25px;
-  flex: 1;
 }
-
-
 
 h3 {
   font-family: 'CaviarDreams', sans-serif;
@@ -61,16 +63,11 @@ h3 a:active {
   text-decoration: underline;
 }
 
-div {
+body {
+  background-color: rgb(240, 240, 240);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
-
-h2 {
-  font-family: 'CaviarDreams', sans-serif;
-  color: rgb(27, 27, 27);
-  margin-right: 10px;
-}
-
-
