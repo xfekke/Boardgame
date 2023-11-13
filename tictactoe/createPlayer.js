@@ -1,8 +1,17 @@
-import fs from "fs";
+// import fs from "fs";
+// import users from './users.json'
+
+console.log('createPlayer.js loaded');
 
 function savePlayerBtn() {
-  let playerXName = document.getElementById('userNameX').value 
+  let playerXName = document.getElementById('userNameX').value
   let playerOName = document.getElementById('userNameO').value
 
-  localStorage.setItem('users', JSON.stringify('myStorage'));
+  console.log('playerXName:', playerXName);
+  console.log('playerOName:', playerOName);
+
+
+
 }
+
+savePlayerBtn()
