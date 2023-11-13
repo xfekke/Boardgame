@@ -7,20 +7,18 @@
 .player-container {
   display: flex;
   align-items: center;
-  margin-left: 1vh;
   margin-bottom: 10px;
 }
 
 #jsonbtn {
-  display: flex;
   align-items: center;
-  justify-content: center;
   margin: 0;
   padding: 0;
   border: none;
 }
 
 #jsonbtn img {
+  grid-area: center;
   width: 375px;
   height: 100px;
 }
