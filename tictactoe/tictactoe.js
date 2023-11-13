@@ -1,3 +1,4 @@
+let storedData = localStorage.getItem('users');
 // Definiera konstanter för olika klasser och kombinationer
 const X_CLASS = 'x';
 const CIRCLE_CLASS = 'circle';
@@ -108,7 +109,7 @@ function placeMark(cell, currentClass) {
   if (marks.length >= maxMarks) {
     const oldestMark = marks.shift();
     oldestMark.classList.remove(currentClass);
-  } 
+  }
   marks.push(cell);
 
   // Lägg till klassen för den aktuella spelaren i cellen

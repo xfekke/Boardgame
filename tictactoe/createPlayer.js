@@ -1,7 +1,20 @@
+let alertMessage = false;
+
 function savePlayerBtn() {
+
+  event.preventDefault();
+
   let playerXName = document.getElementById('userNameX').value;
   let playerOName = document.getElementById('userNameO').value;
 
+  //så inputs ej är tomma och alerts bara visas 1 gång
+  if (!playerXName || !playerOName) {
+    if (!alertMessage) {
+      alert('You have to enter both names!');
+      alertMessage = true;
+    }
+    return;
+  }
   // läs/hämta localstorage info
   let existingData = localStorage.getItem('users');
 
@@ -19,7 +32,11 @@ function savePlayerBtn() {
   localStorage.setItem('users', JSON.stringify(existingData));
 
   console.log('Data saved successfully:', existingData);
+
+  window.location.href = './tictactoe.html';
 }
+
+document.getElementById('jsonbtn').addEventListener('click', savePlayerBtn);
 
 savePlayerBtn();
 
