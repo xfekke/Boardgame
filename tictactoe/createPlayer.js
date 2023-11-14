@@ -15,6 +15,7 @@ function savePlayerBtn() {
     }
     return;
   }
+
   // läs/hämta localstorage info
   let existingData = localStorage.getItem('users');
 
@@ -24,9 +25,13 @@ function savePlayerBtn() {
     existingData = JSON.parse(existingData);
   }
 
-  // uppdatera
-  existingData.playerXName = playerXName;
-  existingData.playerOName = playerOName;
+  if (!existingData[playerXName]) {
+    existingData[playerXName] = { name: playerXName, score: 0 };
+  }
+
+  if (!existingData[playerOName]) {
+    existingData[playerOName] = { name: playerOName, score: 0 };
+  }
 
   // spara till localstorage
   localStorage.setItem('users', JSON.stringify(existingData));

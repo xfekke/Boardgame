@@ -9,20 +9,13 @@
 
 <body>
   <h1>Winner Page</h1>
-  <div id="winner"></div>
+  <div id="playersResults"></div>
 
-  <script>
+  <script src="endGame.js" defer></script>
 
-    const winner = localStorage.getItem('winner');
-
-
-    const winnerElement = document.getElementById('winner');
-    if (winner) {
-      winnerElement.innerText = `Winner: Player ${winner}`;
-    } else {
-      winnerElement.innerText = 'It\'s a draw!';
-    }
-  </script>
+  <h2>
+    <a href="./main.html">Startpage</a>
+  </h2>
 </body>
 
 </html>

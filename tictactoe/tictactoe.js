@@ -31,11 +31,11 @@ endGameBtn.addEventListener('click', goToEndGamePage);
 
 function goToEndGamePage() {
   const winner = localStorage.getItem('winner');
-  localStorage.setItem('winner', winner);
+  window.location.href = 'endGame.html';
 
   setTimeout(() => {
     window.location.href = 'endGame.html';
-  }, 10000);
+  }, 200);
 }
 
 // Funktion för att starta spelet
@@ -139,13 +139,34 @@ function setBoardHoverClass() {
   }
 }
 
+
 // Funktion för att kolla om någon har vunnit
 function checkWin(currentClass) {
+  const winnerName = localStorage.getItem('winner');
+
+  if (winnerName) {
+    console.log('Winner:', winnerName);
+
+    let existingData = localStorage.getItem('users');
+
+    if (existingData) {
+      existingData = JSON.parse(existingData);
+      console.log('Existing Data:', existingData);
+
+      if (existingData[winnerName]) {
+        existingData[winnerName].score += 1;
+        localStorage.setItem('users', JSON.stringify(existingData));
+        console.log('Score updated:', existingData);
+      }
+    }
+  }
+
   return WINNING_COMBINATIONS.some(combination => {
     return combination.every(index => {
       return cellElements[index].classList.contains(currentClass);
     });
   });
 }
+
 
 
