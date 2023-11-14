@@ -1,7 +1,6 @@
 let alertMessage = false;
 
 function savePlayerBtn() {
-
   event.preventDefault();
 
   let playerXName = document.getElementById('userNameX').value;
@@ -11,7 +10,6 @@ function savePlayerBtn() {
   if (!playerXName || !playerOName) {
     if (!alertMessage) {
       alert('You have to enter both names!');
-      alertMessage = true;
     }
     return;
   }
@@ -37,6 +35,9 @@ function savePlayerBtn() {
   localStorage.setItem('users', JSON.stringify(existingData));
 
   console.log('Data saved successfully:', existingData);
+
+  localStorage.setItem('playerXName', playerXName);
+  localStorage.setItem('playerOName', playerOName);
 
   window.location.href = './tictactoe.html';
 }

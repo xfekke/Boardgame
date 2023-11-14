@@ -1,3 +1,7 @@
+const playerXName = localStorage.getItem('playerXName');
+const playerOName = localStorage.getItem('playerOName');
+
+
 let storedData = localStorage.getItem('users');
 const X_CLASS = 'x';
 const CIRCLE_CLASS = 'circle';
@@ -142,31 +146,41 @@ function setBoardHoverClass() {
 
 // Funktion för att kolla om någon har vunnit
 function checkWin(currentClass) {
-  const winnerName = localStorage.getItem('winner');
-
-  if (winnerName) {
-    console.log('Winner:', winnerName);
-
-    let existingData = localStorage.getItem('users');
-
-    if (existingData) {
-      existingData = JSON.parse(existingData);
-      console.log('Existing Data:', existingData);
-
-      if (existingData[winnerName]) {
-        existingData[winnerName].score += 1;
-        localStorage.setItem('users', JSON.stringify(existingData));
-        console.log('Score updated:', existingData);
-      }
-    }
-  }
-
-  return WINNING_COMBINATIONS.some(combination => {
+  const isWinner = WINNING_COMBINATIONS.some(combination => {
     return combination.every(index => {
       return cellElements[index].classList.contains(currentClass);
     });
   });
+
+  if (isWinner) {
+    console.log(`${currentClass === X_CLASS ? playerXName : playerOName} har vunnit!`);
+
+    // Hämta befintliga spelaruppgifter från localStorage
+    let existingData = localStorage.getItem('users');
+
+    if (existingData) {
+      existingData = JSON.parse(existingData);
+
+      // Öka poängen för den vinnande spelaren
+      const winnerName = currentClass === X_CLASS ? playerXName : playerOName;
+      if (existingData[winnerName]) {
+        existingData[winnerName].score = (existingData[winnerName].score || 0) + 1;
+      }
+
+      // Spara uppdaterad information till localStorage
+      localStorage.setItem('users', JSON.stringify(existingData));
+
+      // Logga den uppdaterade poängen
+      console.log(`Ny poäng för ${winnerName}: ${existingData[winnerName].score}`);
+    } else {
+      console.log('Ingen användare hittades i localStorage.');
+    }
+  }
+
+  return isWinner;
 }
+
+
 
 
 
