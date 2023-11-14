@@ -30,6 +30,12 @@ function displayPlayerResults() {
     let scoreCell = row.insertCell(1);
     nameCell.textContent = player.name;
     scoreCell.textContent = player.score;
+
+    nameCell.style.paddingRight = '20vh';
+    nameCell.style.marginBottom = '20vh';
+
+    nameCell.textContent = player.name;
+    scoreCell.textContent = player.score;
   });
 }
 

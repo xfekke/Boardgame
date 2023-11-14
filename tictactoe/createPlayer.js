@@ -14,6 +14,13 @@ function savePlayerBtn() {
     return;
   }
 
+  if (playerXName.length > 10 || playerOName.length > 10) {
+    if (!alertMessage) {
+      alert("Name can't be longer than 10 characters!");
+    }
+    return;
+  }
+
   // läs/hämta localstorage info
   let existingData = localStorage.getItem('users');
 
