@@ -12,17 +12,24 @@ function displayPlayerResults() {
 
   existingData = JSON.parse(existingData);
 
-  // Sortera spelarna efter poäng i fallande ordning
-  let sortedPlayers = Object.values(existingData).sort((a, b) => b.score - a.score);
+  // Sortera spelarna efter poäng i fallande ordning, hantera undefined-värden
+  let sortedPlayers = Object.values(existingData)
+    .filter(player => player.score !== undefined) // Filtrera bort spelare med undefined score
+    .sort((a, b) => (b.score || 0) - (a.score || 0)); // Sortera baserat på poäng, hantera undefined-värden
+
+  // Visa endast de första 10 spelarna
+  sortedPlayers = sortedPlayers.slice(0, 10);
 
   // Välj den plats i DOM där du vill visa resultatet
-  let playersResultsContainer = document.getElementById('playersResults');
+  let playersResultsTable = document.getElementById('playersResults');
 
-  // Loopa igenom de första 10 resultaten och skapa HTML för att visa namn och poäng
-  for (let i = 0; i < Math.min(10, sortedPlayers.length); i++) {
-    let player = sortedPlayers[i];
-    let playerDiv = document.createElement('div');
-    playerDiv.innerHTML = `<p>Name: ${player.name}</p><p>Score: ${player.score}</p>`;
-    playersResultsContainer.appendChild(playerDiv);
-  }
+  // Loopa igenom resultaten och skapa tabellrader
+  sortedPlayers.forEach(player => {
+    let row = playersResultsTable.insertRow();
+    let nameCell = row.insertCell(0);
+    let scoreCell = row.insertCell(1);
+    nameCell.textContent = player.name;
+    scoreCell.textContent = player.score;
+  });
 }
+

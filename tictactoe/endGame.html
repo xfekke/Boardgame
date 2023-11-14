@@ -5,11 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Winner Page</title>
+  <link rel="stylesheet" href="endGame.css">
 </head>
 
 <body>
   <h1>Winner Page</h1>
-  <div id="playersResults"></div>
+  <table id="playersResultsTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody id="playersResults"></tbody>
+  </table>
 
   <script src="endGame.js" defer></script>
 
