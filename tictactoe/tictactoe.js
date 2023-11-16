@@ -178,7 +178,20 @@ function checkWin(currentClass) {
     } else {
       console.log('Ingen användare hittades i localStorage.');
     }
+
+    let matchResult = {
+      playerX: playerXName,
+      playerO: playerOName,
+      winner: currentClass === X_CLASS ? playerXName : playerOName,
+      timestamp: new Date().toLocaleString(),
+    };
+
+    let matchHistory = localStorage.getItem('matchHistory') ? JSON.parse(localStorage.getItem('matchHistory')) : [];
+    matchHistory.push(matchResult);
+    localStorage.setItem('matchHistory', JSON.stringify(matchHistory));
   }
+
+
 
   return isWinner;
 }
