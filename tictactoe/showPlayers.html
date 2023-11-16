@@ -1,23 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Winner Page</title>
-  <link rel="stylesheet" href="endGame.css">
+  <title>LocalStorage-utskrift</title>
 </head>
 
 <body>
-  <table id="playersResultsTable">
-    <tbody id="playersResults"></tbody>
-  </table>
 
-  <script src="showPlayers.js" defer></script>
+  <!-- Din HTML-struktur -->
+  <div id="output"></div>
 
-  <h2>
-    <a href="./main.html">Startpage</a>
-  </h2>
+  <script>
+    // Hämta data från localStorage
+    var usersData = localStorage.getItem("users");
+
+    // Kontrollera om det finns data i localStorage
+    if (usersData) {
+      // Konvertera JSON-strängen till ett JavaScript-objekt (om det är i JSON-format)
+      var users = JSON.parse(usersData);
+
+      // Loopa igenom objektet och skriv ut namnen på sidan
+      for (var key in users) {
+        if (users.hasOwnProperty(key)) {
+          document.getElementById("output").innerHTML += key + "<br>";
+        }
+      }
+    } else {
+      document.getElementById("output").innerHTML = "Ingen data i localStorage.";
+    }
+  </script>
+
 </body>
 
 </html>
