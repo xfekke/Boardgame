@@ -10,100 +10,20 @@
 <body>
   <h2>Create Users</h2>
   <label for="username">Username:</label>
-  <input type="text" id="username">
+  <input type="text" id="userName">
   <button onclick="addUser()">Add User</button>
 
   <h2>Select Players</h2>
-  <label for="player1">Player One:</label>
-  <select id="player1"></select>
+  <label for="playerX">Player X:</label>
+  <select id="playerX"></select>
 
-  <label for="player2">Player Two:</label>
-  <select id="player2"></select>
+  <label for="playerO">Player O:</label>
+  <select id="playerO"></select>
 
   <button onclick="startGame()">Start Game</button>
 
-  <script>
-    // Function to load users from local storage
-    function loadUsers() {
-      var storedUsers = localStorage.getItem('users');
-      return storedUsers ? JSON.parse(storedUsers) : [];
-    }
 
-    // Function to save users to local storage
-    function saveUsers(users) {
-      localStorage.setItem('users', JSON.stringify(users));
-    }
-
-    // Function to initialize users array
-    function initUsers() {
-      var loadedUsers = loadUsers();
-      return Array.isArray(loadedUsers) ? loadedUsers : [];
-    }
-
-    // Initialize users array
-    var users = initUsers();
-
-    // Function to add a user
-    function addUser() {
-      var usernameInput = document.getElementById("username");
-      var username = usernameInput.value;
-
-      // Check if the username is not empty
-      if (username.trim() !== "") {
-        // Add the user to the array
-        users.push(username);
-
-        // Save the users to local storage
-        saveUsers(users);
-
-        // Update the dropdown menus
-        updateDropdowns();
-
-        // Clear the input field
-        usernameInput.value = "";
-      }
-    }
-
-    // Function to update the dropdown menus
-    function updateDropdowns() {
-      // Get the select elements
-      var player1Select = document.getElementById("player1");
-      var player2Select = document.getElementById("player2");
-
-      // Clear existing options
-      player1Select.innerHTML = "";
-      player2Select.innerHTML = "";
-
-      // Add a default option
-      var defaultOption = document.createElement("option");
-      defaultOption.text = "Select a player";
-      defaultOption.value = "";
-      player1Select.add(defaultOption.cloneNode(true));
-      player2Select.add(defaultOption.cloneNode(true));
-
-      // Add users to the options
-      for (var i = 0; i < users.length; i++) {
-        var option = document.createElement("option");
-        option.text = users[i];
-        option.value = users[i];
-
-        player1Select.add(option.cloneNode(true));
-        player2Select.add(option.cloneNode(true));
-      }
-    }
-
-    // Function to start the game
-    function startGame() {
-      // Add your logic here, e.g., navigate to another page
-      alert("Game started! Add your logic to navigate to the game page.");
-    }
-
-    // Load users from local storage on page load
-    window.onload = function () {
-      users = initUsers(); // Ensure the 'users' variable is properly initialized
-      updateDropdowns();
-    };
-  </script>
+  <script src="userSelect.js" defer></script>
 </body>
 
 </html>

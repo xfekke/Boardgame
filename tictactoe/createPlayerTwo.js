@@ -1,6 +1,4 @@
-let alertMessage = false;
-
-function savePlayerBtn() {
+function addUser() {
   event.preventDefault();
 
   let playerName = document.getElementById('userName').value;
@@ -16,7 +14,7 @@ function savePlayerBtn() {
 
   if (playerName.length > 10 || playerName.length < 2) {
     if (!alertMessage) {
-      alert("Name has to be between 2 and 10 characters!");
+      alert("Name has to be between 2-10 characters!");
     }
     return;
   }
@@ -41,13 +39,5 @@ function savePlayerBtn() {
 
   console.log('Data saved successfully:', existingData);
 
-  localStorage.setItem('playerName', playerName);
-
-
-  window.location.href = './main.html';
+  localStorage.setItem('users', playerName);
 }
-
-document.getElementById('jsonbtn').addEventListener('click', savePlayerBtn);
-
-savePlayerBtn();
-
