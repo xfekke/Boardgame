@@ -9,19 +9,19 @@
 
 <body>
 
-  <!-- Din HTML-struktur -->
+
   <div id="output"></div>
 
   <script>
-    // Hämta data från localStorage
+
     var usersData = localStorage.getItem("users");
 
-    // Kontrollera om det finns data i localStorage
+
     if (usersData) {
-      // Konvertera JSON-strängen till ett JavaScript-objekt (om det är i JSON-format)
+
       var users = JSON.parse(usersData);
 
-      // Loopa igenom objektet och skriv ut namnen på sidan
+
       for (var key in users) {
         if (users.hasOwnProperty(key)) {
           document.getElementById("output").innerHTML += key + "<br>";
