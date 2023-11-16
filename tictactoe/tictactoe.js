@@ -1,6 +1,7 @@
 const playerXName = localStorage.getItem('playerXName');
 const playerOName = localStorage.getItem('playerOName');
 
+let moveCount = 0;
 
 let storedData = localStorage.getItem('users');
 const X_CLASS = 'x';
@@ -75,6 +76,8 @@ function handleClick(e) {
 
   placeMark(cell, currentClass);
 
+  moveCount++;
+
   // Kolla om någon har vunnit
   if (checkWin(currentClass)) {
     endGame(false);
@@ -91,7 +94,7 @@ function endGame(draw) {
   if (draw) {
     winningMessageTextElement.innerText = 'Draw!';
   } else {
-    winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`;
+    winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins! Total moves done: ${moveCount}`;
   }
   winningMessageElement.classList.add('show');
 }
