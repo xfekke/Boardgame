@@ -1,7 +1,9 @@
 const playerXName = localStorage.getItem('playerXName');
 const playerOName = localStorage.getItem('playerOName');
 
+let movesMade = 0;
 
+let storedDataTwo = localStorage.getItem('matches');
 let storedData = localStorage.getItem('users');
 const X_CLASS = 'x';
 const CIRCLE_CLASS = 'circle';
@@ -36,6 +38,7 @@ endGameBtn.addEventListener('click', goToEndGamePage);
 function goToEndGamePage() {
   const winner = localStorage.getItem('winner');
   window.location.href = 'endGame.html';
+  console.log(winner);
 
   setTimeout(() => {
     window.location.href = 'endGame.html';
@@ -75,6 +78,8 @@ function handleClick(e) {
 
   placeMark(cell, currentClass);
 
+  movesMade++; //+1 för varje rond när någon lägger en markör(och det går igenom)
+
   // Kolla om någon har vunnit
   if (checkWin(currentClass)) {
     endGame(false);
@@ -89,9 +94,9 @@ function handleClick(e) {
 // Funktion för att avsluta spelet och visa det vinnande meddelandet
 function endGame(draw) {
   if (draw) {
-    winningMessageTextElement.innerText = 'Draw!';
+    winningMessageTextElement.innerText = `Draw! Moves made: ${movesMade}`;
   } else {
-    winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`;
+    winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins! Moves made: ${movesMade}`;
   }
   winningMessageElement.classList.add('show');
 }
@@ -166,6 +171,8 @@ function checkWin(currentClass) {
       if (existingData[winnerName]) {
         existingData[winnerName].score = (existingData[winnerName].score || 0) + 1;
       }
+
+      //let matchHistory = localStorage.getItem('matches'); WIPPPP
 
       // Spara uppdaterad information till localStorage
       localStorage.setItem('users', JSON.stringify(existingData));
