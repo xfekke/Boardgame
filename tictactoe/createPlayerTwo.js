@@ -40,4 +40,8 @@ function addUser() {
   console.log('Data saved successfully:', existingData);
 
   localStorage.setItem('users', playerName);
+
+  let objectPlayer = JSON.parse(playerName);
+
+  console.log(objectPlayer);
 }
