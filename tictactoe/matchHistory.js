@@ -12,6 +12,8 @@ function displayMatchHistory() {
   matchHistory = JSON.parse(matchHistory);
   let matchHistoryTable = document.getElementById('matchHistoryBody');
 
+  matchHistory = matchHistory.reverse().slice(0, 10);
+
   matchHistory.forEach(match => {
     let row = matchHistoryTable.insertRow();
     row.insertCell(0).textContent = match.playerX;
