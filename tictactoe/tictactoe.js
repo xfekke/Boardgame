@@ -184,6 +184,7 @@ function checkWin(currentClass) {
       playerO: playerOName,
       winner: currentClass === X_CLASS ? playerXName : playerOName,
       timestamp: new Date().toLocaleString(),
+      moveCount: moveCount
     };
 
     let matchHistory = localStorage.getItem('matchHistory') ? JSON.parse(localStorage.getItem('matchHistory')) : [];

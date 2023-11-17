@@ -20,5 +20,6 @@ function displayMatchHistory() {
     row.insertCell(1).textContent = match.playerO;
     row.insertCell(2).textContent = match.winner;
     row.insertCell(3).textContent = match.timestamp;
+    row.insertCell(4).textContent = match.moveCount;
   });
 }
