@@ -1,10 +1,16 @@
+@font-face {
+  font-family: 'CaviarDreams';
+  src: local('CaviarDreams'), url('CaviarDreams_Bold.ttf'), format('ttf');
+}
+
+#matchHistory {
+  width: 30%;
+  height: auto;
+}
+
 body {
   font-family: 'CaviarDreams', sans-serif;
-  background-image: url(matchHistoryBackground.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
+  background-color: rgb(240, 240, 240);
   color: rgb(27, 27, 27);
   text-align: center;
 }
@@ -27,7 +33,7 @@ th {
 }
 
 h2 {
-  margin-top: 20px;
+  margin-top: 2px;
 }
 
 a {

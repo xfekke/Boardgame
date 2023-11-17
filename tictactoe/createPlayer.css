@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'CaviarDreams';
+  src: local('CaviarDreams'), url('CaviarDreams_Bold.ttf'), format('ttf');
+}
+
 #createPlayer {
   width: 50%;
   height: auto;
