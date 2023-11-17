@@ -3,6 +3,13 @@
   src: local('CaviarDreams'), url('CaviarDreams_Bold.ttf'), format('ttf');
 }
 
+body {
+  font-family: 'CaviarDreams', sans-serif;
+  background-color: rgb(240, 240, 240);
+  color: rgb(27, 27, 27);
+  text-align: center;
+}
+
 h1 {
   font-family: 'CaviarDreams', sans-serif;
   font-size: 6vh;
