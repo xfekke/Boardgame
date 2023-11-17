@@ -191,35 +191,7 @@ function checkWin(currentClass) {
     matchHistory.push(matchResult);
     localStorage.setItem('matchHistory', JSON.stringify(matchHistory));
 
-    let playerXResult = {
-      playerX: playerXName,
-      playerO: playerOName,
-      winner: currentClass === X_CLASS ? playerXName : playerOName,
-      moveCount: moveCount
-    }
-
-    let playerXHistory = localStorage.getItem('matchHistoryXPlayer') ? JSON.parse(localStorage.getItem('matchHistoryXPlayer')) : [];
-    playerXHistory.push(playerXResult);
-    localStorage.setItem('matchHistoryXPlayer', JSON.stringify(playerXHistory));
-
-
-
-    let playerOResult = {
-      playerX: playerXName,
-      playerO: playerOName,
-      winner: currentClass === X_CLASS ? playerXName : playerOName,
-      moveCount: moveCount
-    };
-
-    let playerOHistory = localStorage.getItem('matchHistoryOPlayer') ? JSON.parse(localStorage.getItem('matchHistoryOPlayer')) : [];
-    playerOHistory.push(playerOResult);
-    localStorage.setItem('matchHistoryOPlayer', JSON.stringify(playerOHistory));
-
-
-
   }
-
-
 
   return isWinner;
 }
