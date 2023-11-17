@@ -89,7 +89,6 @@ function handleClick(e) {
   }
 }
 
-// Funktion för att avsluta spelet och visa det vinnande meddelandet
 function endGame(draw) {
   if (draw) {
     winningMessageTextElement.innerText = 'Draw!';
@@ -99,27 +98,22 @@ function endGame(draw) {
   winningMessageElement.classList.add('show');
 }
 
-// Funktion för att kolla om det är oavgjort
 function isDraw() {
   return [...cellElements].every(cell => {
     return cell.classList.contains(X_CLASS) || cell.classList.contains(CIRCLE_CLASS);
   });
 }
 
-// Konstanter för att hålla reda på det maximala antalet markeringar för X och O
 const MAX_X_MARKS = 3;
 const MAX_CIRCLE_MARKS = 3;
 
-// Arrayer för att hålla reda på vilka celler som är markerade med X och O
 const xMarks = [];
 const circleMarks = [];
 
-// Funktion för att placera en markering i en cell
 function placeMark(cell, currentClass) {
   const marks = currentClass === X_CLASS ? xMarks : circleMarks;
   const maxMarks = currentClass === X_CLASS ? MAX_X_MARKS : MAX_CIRCLE_MARKS;
 
-  // Om antalet markeringar är lika med eller större än det maximala antalet tillåtna, ta bort den äldsta markeringen
   if (marks.length >= maxMarks) {
     const oldestMark = marks.shift();
     const lastMovedMark = marks[0];
@@ -133,16 +127,13 @@ function placeMark(cell, currentClass) {
   }
   marks.push(cell);
 
-  // Lägg till klassen för den aktuella spelaren i cellen
   cell.classList.add(currentClass);
 }
 
-// Funktion för att byta tur mellan spelarna
 function swapTurns() {
   circleTurn = !circleTurn;
 }
 
-// Funktion för att uppdatera stilen på spelbrädet beroende på vilken spelare som är aktiv
 function setBoardHoverClass() {
   board.classList.remove(X_CLASS);
   board.classList.remove(CIRCLE_CLASS);
@@ -153,8 +144,6 @@ function setBoardHoverClass() {
   }
 }
 
-
-// Funktion för att kolla om någon har vunnit
 function checkWin(currentClass) {
   const isWinner = WINNING_COMBINATIONS.some(combination => {
     return combination.every(index => {
@@ -165,25 +154,21 @@ function checkWin(currentClass) {
   if (isWinner) {
     console.log(`${currentClass === X_CLASS ? playerXName : playerOName} has won!`);
 
-    // Hämta befintliga spelaruppgifter från localStorage
     let existingData = localStorage.getItem('users');
 
     if (existingData) {
       existingData = JSON.parse(existingData);
 
-      // Öka poängen för den vinnande spelaren
       const winnerName = currentClass === X_CLASS ? playerXName : playerOName;
       if (existingData[winnerName]) {
         existingData[winnerName].score = (existingData[winnerName].score || 0) + 1;
       }
 
-      // Spara uppdaterad information till localStorage
       localStorage.setItem('users', JSON.stringify(existingData));
 
-      // Logga den uppdaterade poängen
-      console.log(`Ny poäng för ${winnerName}: ${existingData[winnerName].score}`);
+      console.log(`New point for ${winnerName}: ${existingData[winnerName].score}`);
     } else {
-      console.log('Ingen användare hittades i localStorage.');
+      console.log('No users found in localStorage.');
     }
 
     let matchResult = {

@@ -6,7 +6,6 @@ function savePlayerBtn() {
   let playerXName = document.getElementById('userNameX').value;
   let playerOName = document.getElementById('userNameO').value;
 
-  //så inputs ej är tomma och alerts bara visas 1 gång
   if (!playerXName || !playerOName) {
     if (!alertMessage) {
       alert('You have to enter both names!');
@@ -21,10 +20,9 @@ function savePlayerBtn() {
     return;
   }
 
-  playerXName = playerXName.toUpperCase();
-  playerOName = playerOName.toUpperCase();
+  playerXName = playerXName.toUpperCase().trim();
+  playerOName = playerOName.toUpperCase().trim();
 
-  // läs/hämta localstorage info
   let existingData = localStorage.getItem('users');
 
   if (!existingData) {
@@ -41,7 +39,6 @@ function savePlayerBtn() {
     existingData[playerOName] = { name: playerOName, score: 0 };
   }
 
-  // spara till localstorage
   localStorage.setItem('users', JSON.stringify(existingData));
 
   console.log('Data saved successfully:', existingData);

@@ -1,14 +1,10 @@
 var matchHistory = [];
 
 document.addEventListener('DOMContentLoaded', function () {
-  // hämta info
   matchHistory = getMatchHistory();
 
-  // ref till html
   var nameSelector = document.getElementById('nameSelector');
 
-
-  // loop för skapa spelar namn i dropdown menyn
   var uniquePlayerNames = {};
   for (var i = 0; i < matchHistory.length; i++) {
     var currentMatch = matchHistory[i];
@@ -16,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (currentMatch.playerO) uniquePlayerNames[currentMatch.playerO] = true;
   }
 
-  // option för unika namn - tas bort?
   for (var playerName in uniquePlayerNames) {
     var option = document.createElement('option');
     option.value = playerName;
@@ -31,13 +26,11 @@ function getMatchHistory() {
 }
 
 function showPlayerHistory() {
-  // namn hämtat till dropdown
+
   var selectedPlayerName = nameSelector.value;
 
-  // hämtar ref till resultatContainer från html
   var resultContainer = document.getElementById('resultContainer');
 
-  // visa matchhistorik för valt namn i resultContainer
   var playerHistory = findPlayerHistory(selectedPlayerName);
 
   if (playerHistory.length > 0) {
@@ -47,7 +40,6 @@ function showPlayerHistory() {
   }
 }
 
-// söka historik per namn
 function findPlayerHistory(playerName) {
   var playerHistory = [];
 

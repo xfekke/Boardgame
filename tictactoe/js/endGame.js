@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function displayPlayerResults() {
-  // Hämta data från local storage
   let existingData = localStorage.getItem('users');
   if (!existingData) {
     console.error('No player data found.');
@@ -12,18 +11,14 @@ function displayPlayerResults() {
 
   existingData = JSON.parse(existingData);
 
-  // Sortera spelarna efter poäng i fallande ordning, hantera undefined-värden
   let sortedPlayers = Object.values(existingData)
-    .filter(player => player.score !== undefined) // Filtrera bort spelare med undefined score
-    .sort((a, b) => (b.score || 0) - (a.score || 0)); // Sortera baserat på poäng, hantera undefined-värden
+    .filter(player => player.score !== undefined) 
+    .sort((a, b) => (b.score || 0) - (a.score || 0)); 
 
-  // Visa endast de första 10 spelarna
   sortedPlayers = sortedPlayers.slice(0, 10);
 
-  // Välj den plats i DOM där du vill visa resultatet
   let playersResultsTable = document.getElementById('playersResults');
 
-  // Loopa igenom resultaten och skapa tabellrader
   sortedPlayers.forEach(player => {
     let row = playersResultsTable.insertRow();
     let nameCell = row.insertCell(0);
