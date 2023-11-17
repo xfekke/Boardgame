@@ -41,7 +41,7 @@ function showPlayerHistory() {
   var playerHistory = findPlayerHistory(selectedPlayerName);
 
   if (playerHistory.length > 0) {
-    resultContainer.innerHTML = 'Match history for' + selectedPlayerName + ':<br>' + '<hr>' + playerHistory.join('<br>' + '<hr>');
+    resultContainer.innerHTML = 'Match history for ' + selectedPlayerName + ':<br>' + '<hr>' + playerHistory.join('<br>' + '<hr>');
   } else {
     resultContainer.innerHTML = 'No history found for ' + selectedPlayerName;
   }
