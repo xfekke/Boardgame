@@ -21,6 +21,9 @@ function savePlayerBtn() {
     return;
   }
 
+  playerXName = playerXName.toUpperCase();
+  playerOName = playerOName.toUpperCase();
+
   // läs/hämta localstorage info
   let existingData = localStorage.getItem('users');
 
