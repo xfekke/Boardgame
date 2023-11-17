@@ -33,18 +33,19 @@
 
 }
 
-#userNameX {
-  width: 10vh;
-}
-
 h2 {
   font-family: 'CaviarDreams', sans-serif;
   color: rgb(27, 27, 27);
   margin-right: 10px;
+  width: 110px;
 }
 
 input {
   flex: 1;
+  font-family: 'CaviarDreams', sans-serif;
+  font-size: xx-large;
+  width: 10vh;
+  margin-left: 10px;
 }
 
 

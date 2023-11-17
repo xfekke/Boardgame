@@ -187,3 +187,9 @@ h2 a:active {
   background-color: transparent;
   text-decoration: underline;
 }
+
+.cell.x.lastSelected::before,
+.cell.x.lastSelected::after,
+.cell.circle.lastSelected::before {
+  background-color: rgb(214, 64, 69);
+}

@@ -3,9 +3,8 @@
   src: local('CaviarDreams'), url('CaviarDreams_Bold.ttf'), format('ttf');
 }
 
-
 body {
-  background-image: url(Startpage2.png);
+  background-image: url(../img/endGame.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -13,43 +12,19 @@ body {
 
 }
 
-nav {
+
+table {
   font-family: 'CaviarDreams', sans-serif;
-  font-size: 5vh;
+  color: rgb(27, 27, 27);
+  font-size: 4.5vh;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  margin-top: 65vh;
-
+  justify-content: center;
+  padding-top: 30vh;
 }
 
-a:link {
-  color: rgb(27, 27, 27);
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: rgb(27, 27, 27);
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: rgb(214, 64, 69);
-  background-color: transparent;
-
-}
-
-a:active {
-  color: rgb(27, 27, 27);
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-p {
+h2 {
   font-family: 'CaviarDreams', sans-serif;
-  color: rgb(27, 27, 27);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,4 +33,28 @@ p {
   left: 0;
   right: 0;
 
+}
+
+h2 a:link {
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+h2 a:visited {
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+h2 a:hover {
+  color: rgb(214, 64, 69);
+  background-color: transparent;
+
+}
+
+h2 a:active {
+  color: rgb(27, 27, 27);
+  background-color: transparent;
+  text-decoration: underline;
 }

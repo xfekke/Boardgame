@@ -122,7 +122,14 @@ function placeMark(cell, currentClass) {
   // Om antalet markeringar är lika med eller större än det maximala antalet tillåtna, ta bort den äldsta markeringen
   if (marks.length >= maxMarks) {
     const oldestMark = marks.shift();
+    const lastMovedMark = marks[0];
     oldestMark.classList.remove(currentClass);
+    oldestMark.classList.remove(`lastSelected`);
+    lastMovedMark.classList.add(`lastSelected`);
+  }
+  else if (marks.length >= maxMarks - 1) {
+    const alertMark = marks[0];
+    alertMark.classList.add('lastSelected');
   }
   marks.push(cell);
 
@@ -156,7 +163,7 @@ function checkWin(currentClass) {
   });
 
   if (isWinner) {
-    console.log(`${currentClass === X_CLASS ? playerXName : playerOName} har vunnit!`);
+    console.log(`${currentClass === X_CLASS ? playerXName : playerOName} has won!`);
 
     // Hämta befintliga spelaruppgifter från localStorage
     let existingData = localStorage.getItem('users');
