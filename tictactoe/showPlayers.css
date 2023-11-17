@@ -3,24 +3,11 @@
   src: local('CaviarDreams'), url('CaviarDreams_Bold.ttf'), format('ttf');
 }
 
-body {
-  background-image: url(endGame.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-
-}
-
-
-table {
+h1 {
   font-family: 'CaviarDreams', sans-serif;
+  font-size: 6vh;
   color: rgb(27, 27, 27);
-  font-size: 4.5vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 30vh;
+  text-align: center;
 }
 
 h2 {
@@ -57,4 +44,16 @@ h2 a:active {
   color: rgb(27, 27, 27);
   background-color: transparent;
   text-decoration: underline;
+}
+
+#output {
+  font-family: 'CaviarDreams', sans-serif;
+  color: rgb(27, 27, 27);
+  font-size: 4vh;
+  text-align: center;
+
+}
+
+body {
+  background-color: rgb(240, 240, 240);
 }
