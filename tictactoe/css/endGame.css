@@ -5,6 +5,7 @@
 
 body {
   background-image: url(../img/endGame.png);
+  background-color: rgb(240, 240, 240);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
